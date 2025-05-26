@@ -311,13 +311,13 @@
         {%- endif -%}
       </a>
 
-
-      <div class="flex justify-end w-full mobile-hide">
-        <a href="{{ section.settings.button_url }}" class="  btn btn--invert ml-16 nav-btn" style="max-width: 250px; padding: 1.5em 3em; ">
-          {{ section.settings.button_label }}
-        </a>
-        </div>
-
+      {% if section.settings.show_button %}
+        <div class="flex justify-end w-full mobile-hide">
+          <a href="{{ section.settings.button_url }}" class="  btn btn--invert ml-16 nav-btn" style="max-width: 250px; padding: 1.5em 3em; ">
+            {{ section.settings.button_label }}
+          </a>
+          </div>
+      {% endif %}
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
@@ -484,6 +484,11 @@
   "class": "section-header",
   "max_blocks": 3,
   "settings": [
+    {
+          "type": "checkbox",
+          "id": "show_button",
+          "label": "Show Button"
+        },
     {
           "type": "url",
           "id": "button_url",

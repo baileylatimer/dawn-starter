@@ -1,7 +1,7 @@
 /* COLORS
 ============== */
 :root {
-  --color-bg: #E9DBD0;
+  --color-bg: #EDEAE4;
   --color-contrast-higher: #000
 }
 .color-bg {
@@ -117,22 +117,6 @@ p {
   -o-border-radius: 12px;
 }
 
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 3px;
-  /*Adjustmargintocontrolinseteffect*/border: 1px dashed #000;
-  /*Adjustbordercolorasneeded*/box-sizing: border-box;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
 
 .btn:hover  {
   background-color: var(--color-contrast-higher);
