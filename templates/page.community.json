@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "hero_section_UTBKKi": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-30.jpg",
+        "badge_text": "",
+        "heading_part1": "The Echelon",
+        "heading_part2": "",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_label": "Join now",
+        "paragraph": "The Echelon by Dylan Blake was created with you in mind. Become part of a community of like-minded individuals who value the finer things in life.  Enjoy exclusive access to products, experiences, and opportunities that elevate your lifestyle.",
+        "overlay_toggle": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "feature_image_dark_tBXCXq": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-64.jpg",
+        "title": "How to Join",
+        "quote": "Purchase a custom suit from Dylan Blake to gain access to The Echelon. Enjoy exclusive benefits like first access to new fabrics, fine dining discounts, and invitations to quarterly events such as product reveals, tastings and exquisite dinners.",
+        "signature": "",
+        "role": "",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "image_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_447N47": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/db-hero.jpg",
+        "title": "Exclusive Fabrics and Products",
+        "quote": "Each month, access limited-edition fabrics and exclusive designs from the world’s top mills. Choose from a curated selection of luxurious materials and unique accessories, including handcrafted ties, pocket squares, and custom-made shoes and belts.",
+        "signature": "",
+        "role": "",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "text_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_LN6giw": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/IMG_5009_21906052-0041-48ef-beaa-cfed717c1b38.jpg",
+        "title": "Exclusive Discounts on Luxurious Experiences",
+        "quote": "As a member, enjoy discounts on gourmet meals, spa treatments, helicopter rides, supercar events, and private tours through our premium partnerships.",
+        "signature": "",
+        "role": "",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "image_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_8xkygz": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/20240907-486A2812.jpg",
+        "title": "Quarterly Events",
+        "quote": "Join us for exclusive events that foster community and connection. Enjoy fine dining, chocolate tastings, and private viewings of our latest collections while networking with fellow members.",
+        "signature": "",
+        "role": "",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_label": "Join now",
+        "column_order": "text_first",
+        "bg_style": "gradient"
+      }
+    }
+  },
+  "order": [
+    "hero_section_UTBKKi",
+    "main",
+    "feature_image_dark_tBXCXq",
+    "feature_image_dark_447N47",
+    "feature_image_dark_LN6giw",
+    "feature_image_dark_8xkygz"
+  ]
+}

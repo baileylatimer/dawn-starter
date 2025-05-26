@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "hero_section": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Frame_47.jpg",
+        "badge_text": "",
+        "heading_part1": "Fall 2024",
+        "heading_part2": "",
+        "button_url": "",
+        "button_label": "",
+        "paragraph": "",
+        "overlay_toggle": false
+      }
+    },
+    "shop_navigation": {
+      "type": "shop-navigation",
+      "settings": {
+        "ready_to_wear_label": "Ready to Wear",
+        "ready_to_wear_url": "",
+        "custom_label": "Custom",
+        "custom_url": "shopify:\/\/pages\/custom",
+        "ready_to_wear_active": true
+      }
+    },
+    "custom_filter_and_grid": {
+      "type": "custom-filter-and-grid",
+      "settings": {
+        "filter_title": "Filter by"
+      }
+    }
+  },
+  "order": [
+    "hero_section",
+    "shop_navigation",
+    "custom_filter_and_grid"
+  ]
+}

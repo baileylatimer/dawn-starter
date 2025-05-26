@@ -1,0 +1,72 @@
+{% schema %}
+{
+  "name": "Shop Navigation",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ready_to_wear_label",
+      "label": "Ready to Wear Button Label",
+      "default": "Ready to Wear"
+    },
+    {
+      "type": "url",
+      "id": "ready_to_wear_url",
+      "label": "Ready to Wear Button URL"
+    },
+    {
+      "type": "text",
+      "id": "custom_label",
+      "label": "Custom Button Label",
+      "default": "Custom"
+    },
+    {
+      "type": "url",
+      "id": "custom_url",
+      "label": "Custom Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "ready_to_wear_active",
+      "label": "Ready to Wear Active",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop Navigation"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="flex justify-center space-x-4 mb-16">
+  <a href="{{ section.settings.ready_to_wear_url }}" class="px-6 py-4 filter-btn transition-colors duration-300 {% if section.settings.ready_to_wear_active %}bg-dark color-bg{% else %}bg-transparent text-black border border-black{% endif %}">
+    {{ section.settings.ready_to_wear_label }}
+  </a>
+  <a href="{{ section.settings.custom_url }}" class="px-6 py-4 filter-btn transition-colors duration-300 {% unless section.settings.ready_to_wear_active %}bg-dark color-bg{% else %}bg-transparent text-black border border-black{% endunless %}">
+    {{ section.settings.custom_label }}
+  </a>
+</div>
+
+{% stylesheet %}
+.filter-btn {
+  border-radius: 8px;
+  overflow: hidden
+}
+
+.bg-black {
+  background-color: black;
+}
+.text-white {
+  color: white;
+}
+.text-black {
+  color: black;
+}
+.border-black {
+  border-color: black;
+}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

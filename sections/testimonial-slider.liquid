@@ -1,0 +1,168 @@
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="testimonial-slider-container">
+  <div class="testimonial-slider">
+    {% for block in section.blocks %}
+      <div class="testimonial-slide p-16  mb-8 bg-dark br relative">
+        <div class="flex flex-col justify-end items-end h-full">
+        <img class="button-img absolute right-0 top-0" src="https://cdn.shopify.com/s/files/1/0584/0961/5456/files/btn.png?v=1721878010"/>
+        {% include 'icon-quote' %}
+        <p class="quote color-bg mt-12 mb-12">{{ block.settings.quote }}</p>
+        <p class="name color-bg mono">{{ block.settings.name }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<style>
+  .button-img {
+    width: 90px !important;
+  }
+  .testimonial-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .testimonial-slide {
+    box-sizing: border-box;
+    margin-right: 15px; /* Add your desired gap here */
+    height: 477px !important;
+  }
+
+
+  .testimonial-slide {
+
+    }
+  
+
+  @media (min-width: 768px) {
+  .testimonial-slide {
+height: 550px !important;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    background-color: var(--color-bg); /* Adjust to match the circle background color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .slick-prev:hover,
+  .slick-next:hover {
+    background-color: var(--color-bg); /* Slightly darker on hover */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+  }
+  .slick-prev::before,
+  .slick-next::before {
+    display: none;
+  }
+
+  .slick-next svg {
+    transform: rotate(180deg);
+  }
+
+  .slick-prev {
+    left: 10px;
+  }
+
+  .slick-next {
+    right: 10px;
+  }
+
+  .slick-prev svg,
+  .slick-next svg {
+    fill: #000; /* Adjust arrow color as needed */
+    width: 20px;
+    height: 20px;
+  }
+
+  .slick-list {
+    margin-right: -15px; /* This should match the margin-right of .testimonial-slide */
+  }
+
+  .slick-prev.slick-disabled,
+  .slick-next.slick-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+</style>
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    $('.testimonial-slider').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      arrows: true,
+      centerMode: true,
+      centerPadding: '15px',
+      prevArrow: '<button type="button" class="slick-prev"><svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.3137 2L3.00002 13.3137M25.6274 13.3137L3.00002 13.3137M14.3137 24.6274L3.00002 13.3137" stroke="black" stroke-width="4"/></svg></button>',
+      nextArrow: '<button type="button" class="slick-next"><svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.3137 2L3.00002 13.3137M25.6274 13.3137L3.00002 13.3137M14.3137 24.6274L3.00002 13.3137" stroke="black" stroke-width="4"/></svg></button>',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '50px'  // Increase padding for larger screens
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '50px'  // Increase padding for mobile
+          }
+        }
+      ]
+    });
+  });
+</script>

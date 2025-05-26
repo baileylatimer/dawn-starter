@@ -1,0 +1,183 @@
+<style>
+    .badge-svg {
+    animation: rotate 30s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .bg-black.opacity-30 {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: block;
+  }
+</style>
+
+
+
+<div class="px-d py-d relative">
+  <section class="hero relative bg-cover bg-center h-full br {% if section.settings.button_url != blank %} py-24 lg:py-64 {% else %} py-24 lg:py-36 {% endif %}" style="{% if section.settings.button_url != blank %} height: 600px; {% endif %} background-image: url({{ section.settings.background_image | img_url: 'master' }});">
+    {% if section.settings.overlay_toggle %}
+      <div class="absolute inset-0 bg-black opacity-30"></div>
+    {% endif %}
+    <div class="relative flex flex-col items-center {% if section.settings.button_url != blank %} justify-between lg:justify-center {% else %} justify-center {% endif %} h-full text-white px-12" style="z-index: 1">
+      {% if section.settings.badge_text != blank %}
+        <div class="absolute top-8 left-8">
+          <svg class="badge-svg" width="195" height="193" viewBox="0 0 195 193" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M97.5 0L114.067 30.2866L142.811 11.168L143.405 45.6843L177.741 42.1137L162.227 72.9525L194.289 85.7477L166.22 105.844L188.664 132.074L154.471 136.824L162.154 170.48L129.67 158.796L120.833 192.167L97.5 166.725L74.1667 192.167L65.3295 158.796L32.8455 170.48L40.5289 136.824L6.33591 132.074L28.7797 105.844L0.710884 85.7477L32.7735 72.9525L17.2591 42.1137L51.5953 45.6843L52.1895 11.168L80.9334 30.2866L97.5 0Z" fill="var(--color-bg)"/>
+          </svg>
+          <div class="badge-text absolute inset-0 flex items-center justify-center text-black text-accent">
+            <div class="mt-10">{{ section.settings.badge_text }}</div>
+          </div>
+        </div>
+      {% endif %}
+      <h1 class="text-center">
+        <span class="block color-bg">{{ section.settings.heading_part1 }}</span>
+        <span class="block color-bg text-secondary">{{ section.settings.heading_part2 }}</span>
+      </h1>
+      {% if section.settings.paragraph != blank %}
+        <p class="color-bg mt-12 text-center" style="max-width: 700px">
+          {{ section.settings.paragraph }}
+        </p>
+      {% endif %}
+      {% if section.settings.button_url != blank %}
+        <a href="{{ section.settings.button_url }}" class="mt-24 px-4 py-2 btn">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </section>
+</div>
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "badge_text",
+        "label": "Badge Text"
+      },
+      {
+        "type": "text",
+        "id": "heading_part1",
+        "label": "Heading Part 1"
+      },
+      {
+        "type": "text",
+        "id": "heading_part2",
+        "label": "Heading Part 2"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "text",
+        "id": "paragraph",
+        "label": "Paragraph"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_toggle",
+        "label": "Enable Overlay"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+  {% endschema %}
+  
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Function to animate each hero section
+  function animateHeroSection(container, index) {
+    const title = container.querySelector('h1');
+    const description = container.querySelector('p');
+    const button = container.querySelector('a');
+
+    // Reset the initial state
+    gsap.set(title, { y: 50, opacity: 0 });
+    gsap.set(description, { y: 70, opacity: 0 });
+    gsap.set(button, { y: 90, opacity: 0 });
+
+    // Check if the section is above the fold
+    if (index === 0) {
+      // Animate immediately for above-the-fold sections
+      gsap.to(title, { y: 0, opacity: 1, duration: 1 });
+      gsap.to(description, { y: 0, opacity: 1, duration: 1, delay: 0.2 });
+      gsap.to(button, { y: 0, opacity: 1, duration: 1, delay: 0.4 });
+    } else {
+      // Scroll-triggered animations for below-the-fold sections
+      gsap.to(title, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+          onEnter: () => ScrollTrigger.refresh() // Refresh on enter
+        }
+      });
+
+      gsap.to(description, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: container,
+          start: "top 75%",
+          end: "top 45%",
+          scrub: true,
+          onEnter: () => ScrollTrigger.refresh() // Refresh on enter
+        }
+      });
+
+      gsap.to(button, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: container,
+          start: "top 70%",
+          end: "top 40%",
+          scrub: true,
+          onEnter: () => ScrollTrigger.refresh() // Refresh on enter
+        }
+      });
+    }
+  }
+
+  // Select all instances of the hero section and animate them
+  document.querySelectorAll('.hero').forEach((container, index) => {
+    animateHeroSection(container, index);
+  });
+});
+
+
+    </script>
+    
+  

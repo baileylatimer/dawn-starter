@@ -1,0 +1,57 @@
+<div class="px-d flex items-center justify-center w-full py-d">
+  <h1 id="feature-heading" class="{% if section.settings.justify_text == true %}text-justify{% else %}text-center{% endif %}{% if section.settings.small_text == true %} h2{% endif %}">
+    {{ section.settings.feature_heading | replace: '<i>', '<i class="animate-word">' }}
+  </h1>
+</div>
+
+{% schema %}
+{
+  "name": "Feature Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "feature_heading",
+      "label": "Heading Text",
+      "default": "Your Feature Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "justify_text",
+      "label": "Justify Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "small_text",
+      "label": "Small Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Text"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.innerWidth >= 1024) { // Adjust the width as needed for your breakpoint
+      gsap.registerPlugin(SplitText);
+      // Select all italic words within the heading
+      const words = document.querySelectorAll('.animate-word');
+      words.forEach(word => {
+        // Split the text into characters
+        const splitText = new SplitText(word, { type: "chars" });
+        const chars = splitText.chars;
+        // Animate each character one by one
+        gsap.from(chars, {
+          opacity: 0,
+          y: 20,
+          duration: 1,
+          stagger: 0.05, // Delay between each character animation
+          ease: "power2.out"
+        });
+      });
+    }
+  });
+</script>

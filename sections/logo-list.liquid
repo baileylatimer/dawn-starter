@@ -1,0 +1,77 @@
+  <style>
+  
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+  
+    .logo-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .logo-item img {
+      max-width: 70%;
+      height: auto;
+    }
+  
+    @media (max-width: 768px) {
+      .logo-item img {
+      max-width: 85%;
+      height: auto;
+    }
+
+      .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+  
+  
+  <div class="logo-list-container px-d py-d">
+    <h2 class="text-center ">{{ section.settings.title }}</h2>
+    <div class="logo-grid mt-16">
+      {% for block in section.blocks %}
+        <div class="logo-item">
+          <img src="{{ block.settings.logo_image | img_url: 'master' }}" alt="Logo">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+
+
+  {% schema %}
+    {
+      "name": "Logo List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "HIGH-QUALITY FABRICS"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "logo",
+          "name": "Logo",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "logo_image",
+              "label": "Logo Image"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Logo List",
+          "category": "Custom"
+        }
+      ]
+    }
+    {% endschema %}

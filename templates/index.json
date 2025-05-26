@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "hero_section_EkGrDE": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/20240907-486A2616.jpg",
+        "badge_text": "",
+        "heading_part1": "Ele<i>v<\/i>ate to",
+        "heading_part2": "Empower",
+        "button_url": "shopify:\/\/collections\/ready-to-wear",
+        "button_label": "Men's Suits",
+        "paragraph": "",
+        "overlay_toggle": false
+      }
+    },
+    "feature_text_KMU4tX": {
+      "type": "feature-text",
+      "settings": {
+        "feature_heading": "We craft <i> Luxurious<\/i>, custom suits that      <i>command <\/i> respect",
+        "justify_text": false,
+        "small_text": true
+      }
+    },
+    "image_grid_CxMKhM": {
+      "type": "image-grid",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-5.jpg",
+        "image_2": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-167.jpg",
+        "image_3": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-127.jpg",
+        "image_4": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-105.jpg",
+        "image_5": "shopify:\/\/shop_images\/2nd_Draft_Mobile-8.jpg"
+      }
+    },
+    "mission_section_HHiGw8": {
+      "type": "mission-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-101.jpg",
+        "title": "<i>W<\/i>hat <i>w<\/i>e <i>do<\/i>",
+        "heading": "By fusing Italian heritage with a modern touch, we design custom suits that captivate your colleagues, ignite desire, and leave everyone asking about you.",
+        "button_url": "shopify:\/\/pages\/our-story",
+        "button_label": "Our story"
+      }
+    },
+    "hero_section_bRLzWq": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/20240907-486A3933.jpg",
+        "badge_text": "",
+        "heading_part1": "<i>How it <i> works<\/i><\/i>",
+        "heading_part2": "",
+        "button_url": "shopify:\/\/pages\/how-it-works",
+        "button_label": "Discover more",
+        "paragraph": "You are important and your time is valuable.  That’s why our artisans will come to you, whether at your home or office, to ensure your convenience.",
+        "overlay_toggle": true
+      }
+    },
+    "logo_list_FzmdB8": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_3P7Gqr": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_662.png"
+          }
+        },
+        "logo_XQJ9GX": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_661.png"
+          }
+        },
+        "logo_3deELp": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_660.png"
+          }
+        },
+        "logo_cgbeKJ": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_659.png"
+          }
+        },
+        "logo_wCf7jG": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_658.png"
+          }
+        },
+        "logo_kwYP8P": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_657.png"
+          }
+        },
+        "logo_WHLBnP": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_656.png"
+          }
+        },
+        "logo_qeqF3t": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify:\/\/shop_images\/Frame_666.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_3P7Gqr",
+        "logo_XQJ9GX",
+        "logo_3deELp",
+        "logo_cgbeKJ",
+        "logo_wCf7jG",
+        "logo_kwYP8P",
+        "logo_WHLBnP",
+        "logo_qeqF3t"
+      ],
+      "settings": {
+        "title": "<i>W<\/i>orld's best Italian <i>fabrics<\/i>"
+      }
+    },
+    "feature_image_tcFh6b": {
+      "type": "feature-image",
+      "settings": {
+        "heading": "Men's fall <i>look book <\/i>",
+        "text": "",
+        "button_label": "View Collection",
+        "button_url": "shopify:\/\/pages\/shop",
+        "image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-121.jpg",
+        "column_order": "text_first"
+      }
+    },
+    "testimonial_slider_mFXdga": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "testimonial_7HHiAT": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Tommaso is a true Italian gentleman, and I cannot say enough about my experience with Dylan Blake for a custom suit. From his accent to his extensive knowledge, it felt like a little slice of Italy in my living room. When the suit arrived, it surpassed my expectations. It was truly stunning and fit my body perfectly!",
+            "name": "Richard S"
+          }
+        },
+        "testimonial_yUhrLg": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Jordan had an eye for exactly what I was looking for. My new forest green herringbone jacket complements my camel trousers seamlessly. The level of detail in their signature gold button, the monogram inside the jacket, and the custom lining really stood out!",
+            "name": "Carson B"
+          }
+        },
+        "testimonial_ENmNBq": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "“We never had to alter anything after the first and only meeting of taking measurements. Look at the final product! It is fabulous. I love the fit, the style, and of course, the color combinations are very Italian, very current and breathtaking. I am a 6’10” ex-basketball player who is a very tough person to fit well. They knocked it out of the park. Hope you like the look. I am obsessed with it, Mike Smith”",
+            "name": "Mike Smith - Utah Jazz Broadcaster"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_7HHiAT",
+        "testimonial_yUhrLg",
+        "testimonial_ENmNBq"
+      ],
+      "settings": {
+      }
+    },
+    "feature_image_YEk3aN": {
+      "type": "feature-image",
+      "disabled": true,
+      "settings": {
+        "heading": "The Echelon",
+        "text": "Join a community that elevates and empowers you. The Echelon by Dylan Blake was created with you in mind. Connect with like-minded individuals in a brotherhood that values excellence",
+        "button_label": "Learn more",
+        "button_url": "shopify:\/\/pages\/community",
+        "image": "shopify:\/\/shop_images\/Frame_51-4.jpg",
+        "column_order": "image_first"
+      }
+    },
+    "hero_section_Rppkpz": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/20240907-486A2135.jpg",
+        "badge_text": "",
+        "heading_part1": "The <i>Echelon <\/i>",
+        "heading_part2": "",
+        "button_url": "shopify:\/\/pages\/community",
+        "button_label": "Learn More",
+        "paragraph": "Join a community that elevates and empowers you. The Echelon by Dylan Blake was created with you in mind. Connect with like-minded individuals in a brotherhood that values excellence.",
+        "overlay_toggle": true
+      }
+    }
+  },
+  "order": [
+    "hero_section_EkGrDE",
+    "feature_text_KMU4tX",
+    "image_grid_CxMKhM",
+    "mission_section_HHiGw8",
+    "hero_section_bRLzWq",
+    "logo_list_FzmdB8",
+    "feature_image_tcFh6b",
+    "testimonial_slider_mFXdga",
+    "feature_image_YEk3aN",
+    "hero_section_Rppkpz"
+  ]
+}

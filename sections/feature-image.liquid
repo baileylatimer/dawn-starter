@@ -1,0 +1,117 @@
+<style>
+  .feature-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .flex.text_first {
+    flex-direction: row;
+  }
+
+  .flex.image_first {
+    flex-direction: row-reverse;
+  }
+
+  .text-content {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .image-content {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+  }
+
+  .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+    .text-content,
+    .image-content {
+      max-width: 100%;
+    }
+  }
+</style>
+
+  
+<div class="px-d py-d">
+  <div class="feature-image-container br">
+    <div class="flex flex-col-reverse {% if section.settings.column_order == 'text_first' %} lg:flex-row {% else %} lg:flex-row-reverse {% endif %}">
+      <div class="text-content p-16 bg-dark flex flex-col justify-center items-start">
+        <h1 class="color-bg">{{ section.settings.heading }}</h1>
+        <p class="color-bg mt-12">{{ section.settings.text }}</p>
+        <a href="{{ section.settings.button_url }}" class="btn mt-12">{{ section.settings.button_label }}</a>
+      </div>
+      <div class="image-content">
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+  {% schema %}
+    {
+      "name": "Feature Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "OUR FAVORITES"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet consectetur. Quisque et eu urna suspendisse egestas. Trincidunt lectus nunc integer nunc velit a ipsum dapibus."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "SHOP NOW"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "column_order",
+          "label": "Column Order",
+          "options": [
+            {
+              "value": "text_first",
+              "label": "Text First"
+            },
+            {
+              "value": "image_first",
+              "label": "Image First"
+            }
+          ],
+          "default": "text_first"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Feature Image",
+          "category": "Custom"
+        }
+      ]
+    }
+    {% endschema %}

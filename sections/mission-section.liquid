@@ -1,0 +1,151 @@
+
+<style>
+  /* .mission-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 548px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0789/1333/files/orange-bg-desktop.svg?v=1711328794');
+  background-size: cover;
+  background-position: top center;
+  z-index: -1;
+}
+
+@media (max-width: 767px) {
+  .mission-section::before {
+    height: 424px; 
+    background-image: url('https://cdn.shopify.com/s/files/1/0789/1333/files/orange-bg-mobile.svg?v=1711328794'); 
+  }
+}  */
+
+.mission-section .before-placeholder {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 608px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0584/0961/5456/files/fade-desktop.svg?v=1721943995');
+  background-size: cover;
+  background-position: top center;
+  z-index: -1;
+  visibility: visible; /* Ensure it's visible */
+  display: block;
+
+}
+
+.mission-section img {
+  max-height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .mission-section .before-placeholder {
+    height: 424px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0584/0961/5456/files/fade-mobile.svg?v=1721943995');
+  }
+}
+
+
+</style>
+
+{% if section.settings.image or section.settings.text %}
+  <div class="mission-section my-36 pt-36 relative">
+    <div class="before-placeholder"></div>
+    <div class="flex body-width px-d gap-12 lg:gap-16 flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 ">
+      {% if section.settings.image %}
+      <div class="flex-1">
+        <img class="br" src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.heading | escape }}">
+      </div>
+      {% endif %}
+      
+      <div class="flex-1">
+        <h2 class="mb-12">{{ section.settings.title }}</h2>
+        <p class="mb-12">{{ section.settings.heading }}</p>
+        {% if section.settings.button_url != blank %}
+          <a href="{{ section.settings.button_url }}" class="  btn btn--invert">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+        <div class="flex gap-4">
+        {% for block in section.blocks %}
+        <div class="flex items-center space-x-2 mb-4">
+          {% if block.settings.row_image %}
+          <img src="{{ block.settings.row_image | img_url: 'master' }}" alt="" >
+          {% endif %}
+          <p>{{ block.settings.text }}</p>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+
+  
+
+
+{% schema %}
+  {
+    "name": "Mission Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Main Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Your Title Here"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Your Heading Here"
+      },
+      {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "text_with_image",
+        "name": "Text Row",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Your text here."
+          },
+          {
+            "type": "image_picker",
+            "id": "row_image",
+            "label": "Row Image (24x24)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Mission Section"
+      }
+    ]
+  }
+  {% endschema %}
+  

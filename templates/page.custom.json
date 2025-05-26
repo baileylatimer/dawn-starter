@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "hero_section_UTBKKi": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Frame_47.jpg",
+        "badge_text": "",
+        "heading_part1": "Fall 2024",
+        "heading_part2": "",
+        "button_url": "",
+        "button_label": "",
+        "paragraph": "",
+        "overlay_toggle": false
+      }
+    },
+    "shop_navigation": {
+      "type": "shop-navigation",
+      "settings": {
+        "ready_to_wear_label": "Ready to Wear",
+        "ready_to_wear_url": "shopify:\/\/collections\/ready-to-wear",
+        "custom_label": "Custom",
+        "custom_url": "shopify:\/\/pages\/custom",
+        "ready_to_wear_active": false
+      }
+    },
+    "typeform_KQUQ4E": {
+      "type": "typeform",
+      "settings": {
+        "feature_heading": "Your Feature Heading",
+        "justify_text": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "featured_collection_Rn7fY7": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "coming-soon",
+        "products_to_show": 9,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_rUjajA": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "coming-soon",
+        "products_to_show": 9,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_bLLQGR": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "coming-soon",
+        "products_to_show": 9,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hero_section_FW6FVN": {
+      "type": "hero-section",
+      "disabled": true,
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/latimer0676_a_tom_ford_photoshoot_of_two_wearing_suits_men_laug_5e3163f1-9cd5-4bd3-9b3e-178b78ae4d98.png",
+        "badge_text": "",
+        "heading_part1": "Explore our fall collection",
+        "heading_part2": "",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_label": "Connect with  artisan",
+        "paragraph": "To experience the exquisite craftsmanship of our Fall Collection, please contact one of our artisans. They will guide you through the process, ensuring every detail is tailored to your exact specifications.",
+        "overlay_toggle": true
+      }
+    }
+  },
+  "order": [
+    "hero_section_UTBKKi",
+    "shop_navigation",
+    "typeform_KQUQ4E",
+    "main",
+    "featured_collection_Rn7fY7",
+    "featured_collection_rUjajA",
+    "featured_collection_bLLQGR",
+    "hero_section_FW6FVN"
+  ]
+}

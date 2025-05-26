@@ -1,0 +1,226 @@
+{% schema %}
+  {
+    "name": "Feature Image Dark",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "main_image",
+        "label": "Main Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "quote",
+        "label": "Quote"
+      },
+      {
+        "type": "text",
+        "id": "signature",
+        "label": "Signature"
+      },
+      {
+        "type": "text",
+        "id": "role",
+        "label": "Role"
+      },
+      {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+      {
+        "type": "select",
+        "id": "column_order",
+        "label": "Column Order",
+        "options": [
+          {
+            "value": "image_first",
+            "label": "Image First"
+          },
+          {
+            "value": "text_first",
+            "label": "Text First"
+          }
+        ],
+        "default": "image_first"
+      },
+      {
+        "type": "select",
+        "id": "bg_style",
+        "label": "Background Style",
+        "options": [
+          {
+            "value": "gradient",
+            "label": "Gradient"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "gradient"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Feature Image Dark",
+        "category": "Custom"
+      }
+    ]
+  }
+  {% endschema %}
+  
+  <div class="feature-image-dark-container px-d py-d">
+    <div class="feature-image-dark-content {% if section.settings.bg_style == 'gradient' %} bg-gradient {% else %} bg-dark {% endif %} br p-8 flex flex-col lg:flex-row {% if section.settings.column_order == 'text_first' %} lg:flex-row-reverse {% endif %}">
+      <div class="image-content flex-2/5 order-1 lg:order-none">
+        <img src="{{ section.settings.main_image | img_url: 'master' }}" alt="Main Image" class="w-full h-full object-cover br" style="height: 350px">
+      </div>
+      <div class="text-content flex flex-col flex-3/5 py-8 lg:p-16 order-2 lg:order-none">
+        <h2 class="{% if section.settings.bg_style == 'dark' %} color-bg{% endif %} mb-12">{{ section.settings.title }}</h2>
+        <p class="quote mb-12 {% if section.settings.bg_style == 'dark' %}color-bg{% endif %}">{{ section.settings.quote }}</p>
+        {% if section.settings.button_url != blank %}
+          <a style="white-space: nowrap; max-width: 350px" href="{{ section.settings.button_url }}" class="btn {% if section.settings.bg_style == 'gradient' %} btn--invert{% endif %}">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+        {% if section.settings.signature != blank %}
+          <div class="flex items-center gap-8">
+        <p class="signature mb-4 {% if section.settings.bg_style == 'dark' %} color-bg{% endif %}">{{ section.settings.signature }}</p>
+            <p class="role {% if section.settings.bg_style == 'dark' %}  color-bg{% endif %} mb-6">/ {{ section.settings.role }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .bg-gradient {
+      background: linear-gradient(180deg, rgba(86, 45, 5, 0.16) 0%, rgba(106, 85, 64, 0.00) 34.5%);
+    }
+  
+    .feature-image-dark-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .feature-image-dark-content {
+      display: flex;
+      width: 100%;
+      gap: 16px;
+      height: 100%;
+    }
+  
+    .image-content,
+    .text-content {
+      height: 100%;
+    }
+  
+    .image-content {
+      flex: 2;
+    }
+  
+    .text-content {
+      flex: 3;
+    }
+  
+    .quote {
+      font-size: 27px;
+      line-height: 105%;
+    }
+  
+    @media (max-width: 1024px) {
+      .quote {
+        font-size: 20px;
+      }
+    }
+  
+    .signature {
+      font-family: 'White Oleander' !important;
+      font-size: 34px;
+    }
+  
+    .role {
+      font-family: 'PP Supply Mono', serif !important;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  
+    @media (max-width: 1024px) {
+      .feature-image-dark-content {
+        flex-direction: column;
+        height: auto;
+      }
+      .image-content {
+        order: 1;
+      }
+      .text-content {
+        order: 2;
+      }
+    }
+  </style>
+  
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Function to animate each section
+  function animateSection(container, index) {
+    const title = container.querySelector('h2');
+    const quote = container.querySelector('.quote');
+
+    // Reset the initial state
+    gsap.set(title, { y: 50, opacity: 0 });
+    gsap.set(quote, { y: 100, opacity: 0 });
+
+    // Animate the title
+    gsap.to(title, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+
+        id: `title-${index}`,
+        onEnter: () => ScrollTrigger.refresh() // Refresh on enter
+      }
+    });
+
+    // Animate the quote
+    gsap.to(quote, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+
+        id: `quote-${index}`,
+        onEnter: () => ScrollTrigger.refresh() // Refresh on enter
+      }
+    });
+  }
+
+  // Select all instances of the section and animate them
+  document.querySelectorAll('.feature-image-dark-container').forEach((container, index) => {
+    animateSection(container, index);
+  });
+});
+
+  </script>
+  

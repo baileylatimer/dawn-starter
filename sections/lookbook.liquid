@@ -1,0 +1,148 @@
+{% schema %}
+  {
+    "name": "Lookbook",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "lookbook_item",
+        "name": "Lookbook Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background Image"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "text",
+            "id": "grid_class_desktop",
+            "label": "Grid Class Desktop"
+          },
+          {
+            "type": "text",
+            "id": "grid_class_mobile",
+            "label": "Grid Class Mobile"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lookbook",
+        "category": "Custom"
+      }
+    ]
+  }
+  {% endschema %}
+  
+  
+  <div class="lookbook-container px-d">
+    {% for block in section.blocks %}
+      <div class="lookbook-item br p-12 {% if block.settings.background_image == blank %}no-bg{% endif %} {% if block.settings.grid_class_desktop != blank %} 
+      col-span-{{ block.settings.grid_class_mobile }} lg:col-span-{{ block.settings.grid_class_desktop }} {% endif %}" 
+        {% if block.settings.background_image != blank %}
+          style="background-image: url({{ block.settings.background_image | img_url: 'master' }});"
+        {% endif %}>
+        <div class="content flex flex-col justify-center h-full">
+          <h2 class="color-bg mb-12">{{ block.settings.heading }}</h2>
+          <p class="color-bg mb-12">{{ block.settings.text }}</p>
+          <a style="max-width: 250px" href="{{ block.settings.button_url }}" class="btn">{{ block.settings.button_label }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div style="display: none;">
+  <div class="col-span-1 lg:col-span-2"></div>
+  <div class="col-span-2 lg:col-span-1"></div>
+  </div>
+  
+  <style>
+    .lookbook-container {
+      display: grid;
+      gap: 16px;
+    }
+    .lookbook-item {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: var(--color-contrast-higher);
+      background-color: #000;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      height: 600px;
+    }
+    .no-bg {
+      background-color: var(--color-contrast-higher);
+      color: var(--color-bg);
+    }
+  
+    @media (min-width: 1024px) {
+      .lookbook-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      /* .lookbook-item:nth-child(6n + 1) {
+        grid-column: span 2;
+      }
+      .lookbook-item:nth-child(6n + 2),
+      .lookbook-item:nth-child(6n + 3),
+      .lookbook-item:nth-child(6n + 4) {
+        grid-column: span 1;
+      }
+       {
+        grid-column: span 2;
+      }
+ 
+      .lookbook-item:nth-child(6n + 6) {
+        grid-column: span 1;
+      }
+      .lookbook-item.no-bg {
+        grid-column: span 2 !important;
+      } */
+    }
+    @media (max-width: 1023px) {
+      .lookbook-item {
+        height: 300px;
+      }
+      .lookbook-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      /* .lookbook-item:nth-child(2n + 1) {
+        grid-column: span 1;
+      }
+      .lookbook-item:nth-child(2n + 2) {
+        grid-column: span 1;
+      }
+      .lookbook-item:nth-child(3n + 1) {
+        grid-column: span 2;
+      }
+      .lookbook-item.no-bg {
+        grid-column: span 2 !important;
+      }
+      .lookbook-item:nth-child(6n + 5) {
+        grid-column: span 2;
+      } */
+    }
+  </style>
+  
+

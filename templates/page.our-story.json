@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "feature_text_jj43tJ": {
+      "type": "feature-text",
+      "settings": {
+        "feature_heading": "Elevation etched in permanence.",
+        "justify_text": false,
+        "small_text": false
+      }
+    },
+    "mission_section_jW9KFn": {
+      "type": "mission-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-64.jpg",
+        "title": "Our Story",
+        "heading": "The name Dylan Blake comes from two legendary poets, Dylan Thomas and William Blake—two creatives fused into one name, beautifully bringing together their distinct styles. This is how art is created—a harmony of ideas merged. Italian heritage with a modern touch. Customs authentically made with cutting-edge appeal, crafted for today's gentleman.",
+        "button_url": "",
+        "button_label": ""
+      }
+    },
+    "feature_image_dark_x8A6x8": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/IMG_4965_1.jpg",
+        "title": "",
+        "quote": "\"As the founder of Dylan Blake, my passion is in crafting pieces of art that make you feel something when you wear it. The feelings of empowerment, confidence, and respect. Every detail of our craftsmanship personifies this and I am elated for you to experience this for yourself. \"",
+        "signature": "Dylan Blake",
+        "role": "Founder & Master Tailor",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "image_first",
+        "bg_style": "dark"
+      }
+    },
+    "feature_image_dark_tzCEaA": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/2nd_Draft_Mobile-12.jpg",
+        "title": "Gold Button",
+        "quote": "Fabrizio, our gold button craftsman, rose \"from the ashes\" after being taken in by a tailor who taught him the craft. Once homeless, he transformed his life through dedication. Every suit is adorned with Fabrizio's iconic gold button, symbolizing empowerment and our duty to empower others.",
+        "signature": "",
+        "role": "",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "text_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_JqxU67": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-126.jpg",
+        "title": "",
+        "quote": "Tommaso, one of the esteemed founders of Dylan Blake, brings the rich heritage and timeless elegance of Italian fashion to our brand. Originally from Italy, Tommaso has spent over 30 years in the fashion industry, designing for some of the most renowned brands and perfecting his exceptional eye for menswear.",
+        "signature": "Tommaso Cardullo",
+        "role": "Co-founder & Master Tailor",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "image_first",
+        "bg_style": "dark"
+      }
+    },
+    "image_three_col_HPzG4E": {
+      "type": "image-three-col",
+      "blocks": {
+        "image_block_pqXRLj": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_52-2.jpg",
+            "alt_text": ""
+          }
+        },
+        "image_block_dbwDFN": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_51-1.jpg",
+            "alt_text": ""
+          }
+        },
+        "image_block_r9fDrc": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_51-2.jpg",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_block_pqXRLj",
+        "image_block_dbwDFN",
+        "image_block_r9fDrc"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "feature_text_jj43tJ",
+    "mission_section_jW9KFn",
+    "feature_image_dark_x8A6x8",
+    "feature_image_dark_tzCEaA",
+    "feature_image_dark_JqxU67",
+    "image_three_col_HPzG4E"
+  ]
+}

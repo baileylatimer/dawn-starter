@@ -1,0 +1,83 @@
+{% schema %}
+{
+  "name": "Sidebar Filters",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Filter by"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="sidebar-filters">
+  <h3>{{ section.settings.title }}</h3>
+  {% for filter in collection.filters %}
+    <details class="filter-group">
+      <summary>{{ filter.label }}</summary>
+      <ul>
+        {% case filter.type %}
+          {% when 'list' %}
+            {% for value in filter.values %}
+              <li>
+                <label>
+                  <input type="checkbox"
+                    name="{{ filter.param_name }}[]"
+                    value="{{ value.value }}"
+                    {% if value.active %}checked{% endif %}
+                  >
+                  {{ value.label }} ({{ value.count }})
+                </label>
+              </li>
+            {% endfor %}
+          {% when 'price_range' %}
+            <li>
+              <label for="price-min">Min price:</label>
+              <input type="number" name="{{ filter.min_value.param_name }}" id="price-min" value="{{ filter.min_value.value | default: 0 }}">
+            </li>
+            <li>
+              <label for="price-max">Max price:</label>
+              <input type="number" name="{{ filter.max_value.param_name }}" id="price-max" value="{{ filter.max_value.value | default: 1000000 }}">
+            </li>
+        {% endcase %}
+      </ul>
+    </details>
+  {% else %}
+    <p>No filters available</p>
+  {% endfor %}
+</div>
+
+{% stylesheet %}
+.sidebar-filters {
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filter-group ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+.filter-group li {
+  /* margin: 5px 0; */
+}
+{% endstylesheet %}
+
+{% javascript %}
+document.addEventListener('change', function(event) {
+  if (event.target.matches('.sidebar-filters input')) {
+    event.target.closest('form').submit();
+  }
+});
+{% endjavascript %}

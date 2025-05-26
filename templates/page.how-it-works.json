@@ -1,0 +1,256 @@
+{
+  "sections": {
+    "hero_section_UTBKKi": {
+      "type": "hero-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-140.jpg",
+        "badge_text": "",
+        "heading_part1": "<i>How it Works<\/i>",
+        "heading_part2": "",
+        "button_url": "",
+        "button_label": "",
+        "paragraph": "",
+        "overlay_toggle": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "feature_image_dark_tBXCXq": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/IMG_4991_2.jpg",
+        "title": "Wardrobe Consultation",
+        "quote": "Your time is of the utmost importance, which is why our Artisans come directly to you—whether at your office or home—to discuss your wardrobe needs. Our curated collection offers over 250 luxurious fabrics, from classic wool to fine linen and cashmere.",
+        "signature": "",
+        "role": "",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_label": "Connect with artisan",
+        "column_order": "image_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_447N47": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-159.jpg",
+        "title": "Measuring for the Perfect Fit",
+        "quote": "Achieving the perfect fit is an art form we take seriously. During your consultation, your Artisan will take over 30 precise measurements from your neck to the floor. We’ll also discuss your fit preferences and daily wear habits to ensure your garments are exactly what you’re looking for.",
+        "signature": "",
+        "role": "",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "text_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_8xkygz": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/2nd_Draft_Mobile-15.jpg",
+        "title": "Crafting of Your Custom Garments",
+        "quote": "After selecting your fabric and having your measurements taken by your Artisan, we will create your garments to your exact specifications. The process typically takes 6 to 8 weeks, depending on the level of detail and customization. Our custom suits, shirts, trousers, and casual wear are meticulously crafted in Italy.",
+        "signature": "",
+        "role": "",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_label": "Connect with artisan",
+        "column_order": "image_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_LN6giw": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/20240907-486A3292.jpg",
+        "title": "Delivering Your Customs",
+        "quote": "When your garments are ready, your Artisan will personally deliver your garments at a time that suits you best. They will walk you through the distinctive features of each piece and provide you with comprehensive care instructions. You'll have the opportunity to try on your customs to confirm the fit.",
+        "signature": "",
+        "role": "",
+        "button_url": "",
+        "button_label": "",
+        "column_order": "text_first",
+        "bg_style": "gradient"
+      }
+    },
+    "feature_image_dark_4VfBgD": {
+      "type": "feature-image-dark",
+      "settings": {
+        "main_image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-3.jpg",
+        "title": "Ongoing Service",
+        "quote": "Our commitment extends well beyond delivery. During your initial consultation, you’ll collaborate with your Artisan to establish a schedule for updating and expanding your wardrobe. Your Artisan will maintain regular contact, ensuring your attire is impeccably prepared for every season,  empowering you to dress with confidence every day.",
+        "signature": "",
+        "role": "",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_label": "Connect with artisan",
+        "column_order": "image_first",
+        "bg_style": "gradient"
+      }
+    },
+    "collapsible_content_trhdfx": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RLNYhK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the custom fitting process work?",
+            "icon": "none",
+            "row_content": "<p>Our fitting process reflects our dedication to precision and excellence. During your initial appointment, our Custom Artisans will take over 30 measurements and capture 5 photos to craft a personalized pattern unique to you. In subsequent appointments, we carefully recheck key measurements to ensure a perfect fit every time. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fixbdK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it necessary to schedule an appointment, or can I come in without one?",
+            "icon": "none",
+            "row_content": "<p>We provide our services by appointment only to ensure a personalized experience. Your Custom Artisan can schedule a visit to your office, home, or any other location that is most convenient for you. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_P6a47x": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much time should I set aside for an appointment or fitting?",
+            "icon": "none",
+            "row_content": "<p>The initial appointment with your clothier generally spans 30 to 60 minutes, based on your schedule. During this session, the clothier will understand your style preferences, assist you in choosing garments, and take your measurements. The first fitting appointment also lasts about 30 to 60 minutes, where you'll try on the clothing and the clothier will note any needed adjustments. Once your pattern is set, future fittings are usually brief, often just a few minutes.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XNrPxU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "After placing an order, how long will it take to receive my custom garments?",
+            "icon": "none",
+            "row_content": "<p>Our dedicated tailors meticulously create your custom garments, transforming your vision into reality. The process typically requires 6-8 weeks, allowing our skilled team to ensure every detail meets the highest standards of craftsmanship.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4KGPHM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer expedited delivery services?",
+            "icon": "none",
+            "row_content": "<p>Absolutely, we provide services for faster delivery. The pricing for these expedited services depends on the specific garment, with costs ranging from $100 to $300. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yVYeXx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "If my weight changes, can my suit be adjusted?",
+            "icon": "none",
+            "row_content": "<p>Certainly, for most of our models, we can perform minor adjustments to your clothing if your weight fluctuates, as long as there is sufficient fabric to allow for these modifications. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7KLxLX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What types of fabrics do you use?",
+            "icon": "none",
+            "row_content": "<p>We take great pride in sourcing fabrics from the finest mills across the globe, including the best Italian and English mills such as Loro Piana, Dormeuil, Huddersfield, and many more. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dBP3CP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where is your custom clothing made? ",
+            "icon": "none",
+            "row_content": "<p>Our customs are expertly crafted in Italy, where we combine traditional techniques with modern innovation to ensure the highest quality and most refined look. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3RgpQX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How is the pricing structured?",
+            "icon": "none",
+            "row_content": "<p>Pricing is determined by the quality of fabric and the level of handwork invested in each garment.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TJLTf9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will my measurements be saved for future orders?",
+            "icon": "none",
+            "row_content": "<p>Yes, we do keep your measurements on file for future orders. However, to ensure the best fit and accommodate any changes in your body, we may remeasure you if necessary during subsequent appointments. This helps us maintain the highest standard of tailoring for each garment.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PkEPEN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can Dylan Blake handle special requests or create unique designs?",
+            "icon": "none",
+            "row_content": "<p>We embrace special requests and unique design preferences from our clients, offering customizations beyond our standard options. This includes personalized embroidery and the selection of custom linings featuring images of your choice, ensuring each garment reflects your individual style.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XjW8Cx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do your customs have a warranty? ",
+            "icon": "none",
+            "row_content": "<p>We offer a comprehensive one-year limited warranty that covers any manufacturing and material defects. This includes issues such as seam tears, stitching failures, and any other craftsmanship-related problems that may arise. Our commitment to quality ensures that we stand behind our products, providing you with peace of mind and confidence in your custom garments. Should any defects occur within this period, we will promptly address and rectify the issue to ensure your complete satisfaction.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cdPwDY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the process after I purchase my custom garments?",
+            "icon": "none",
+            "row_content": "<p>After you purchase your custom garments, we will immediately notify our expert tailors in Italy to begin your order. During the tailoring process, you will receive weekly updates on the status of your garments. Once they are ready, we will schedule an initial fitting where your custom artisan will come to you to ensure everything fits perfectly. If any adjustments are needed, we will arrange a final fitting a few days later to guarantee your garments are to your liking. <\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RLNYhK",
+        "collapsible_row_fixbdK",
+        "collapsible_row_P6a47x",
+        "collapsible_row_XNrPxU",
+        "collapsible_row_4KGPHM",
+        "collapsible_row_yVYeXx",
+        "collapsible_row_7KLxLX",
+        "collapsible_row_dBP3CP",
+        "collapsible_row_3RgpQX",
+        "collapsible_row_TJLTf9",
+        "collapsible_row_PkEPEN",
+        "collapsible_row_XjW8Cx",
+        "collapsible_row_cdPwDY"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "hero_section_UTBKKi",
+    "main",
+    "feature_image_dark_tBXCXq",
+    "feature_image_dark_447N47",
+    "feature_image_dark_8xkygz",
+    "feature_image_dark_LN6giw",
+    "feature_image_dark_4VfBgD",
+    "collapsible_content_trhdfx"
+  ]
+}

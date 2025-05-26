@@ -1,0 +1,71 @@
+{% schema %}
+  {
+    "name": "Image Three Column",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image_block",
+        "name": "Image Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "alt_text",
+            "label": "Alt Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Three Column",
+        "category": "Custom"
+      }
+    ]
+  }
+  {% endschema %}
+  
+  <div class="image-three-col-container px-d py-d">
+    <div class="image-three-col-content flex flex-wrap lg:flex-nowrap">
+      {% for block in section.blocks %}
+        <div class="image-block w-full lg:w-1/3 ">
+          <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text }}" class="w-full h-full object-cover br">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <style>
+    .image-three-col-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .image-three-col-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+    .image-block {
+      width: 100%;
+    }
+    @media (max-width: 1023px) {
+    .image-three-col-content img {
+      height: 300px;
+    }
+    }
+    @media (min-width: 1024px) {
+      .image-three-col-content {
+        flex-wrap: nowrap;
+      }
+      .image-block {
+        width: 33.333%;
+      }
+    }
+  </style>
+  
