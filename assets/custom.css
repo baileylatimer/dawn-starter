@@ -349,3 +349,15 @@ select::after:active {
 .header__icon--account {
   display: none !important;
 }
+
+
+.text-indent {
+  text-indent: 2em;
+  position: relative;
+}
+@media(max-width:1023px) {
+.text-indent {
+  text-indent: 2em;
+  position: relative;
+}
+}

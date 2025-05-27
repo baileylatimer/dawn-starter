@@ -1,7 +1,14 @@
-<div class="px-d flex items-center justify-center w-full py-d">
-  <h1 id="feature-heading" class="{% if section.settings.justify_text == true %}text-justify{% else %}text-center{% endif %}{% if section.settings.small_text == true %} h2{% endif %}">
+<div class="px-d flex items-center j {% if section.settings.right_text %} justify-end {% else %} justify-center {% endif %} w-full py-d">
+  {% if section.settings.right_text %}
+    <h1 id="feature-heading" class="w-3/5 {% if section.settings.indent == true %}text-indent {% endif %}{% if section.settings.justify_text == true %}text-justify{% else %}text-center{% endif %}{% if section.settings.small_text == true %} h2{% endif %}">
+      {{ section.settings.feature_heading | replace: '<i>', '<i class="animate-word">' }}
+    </h1>
+  {% else %}
+
+  <h1 id="feature-heading" class="{% if section.settings.indent == true %}text-indent {% endif %} {% if section.settings.justify_text == true %}text-justify{% else %}text-center{% endif %}{% if section.settings.small_text == true %} h2{% endif %}">
     {{ section.settings.feature_heading | replace: '<i>', '<i class="animate-word">' }}
   </h1>
+  {% endif %}
 </div>
 
 {% schema %}
@@ -13,6 +20,16 @@
       "id": "feature_heading",
       "label": "Heading Text",
       "default": "Your Feature Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "indent",
+      "label": "Indent Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "right_text",
+      "label": "Right Align"
     },
     {
       "type": "checkbox",
