@@ -2888,7 +2888,7 @@ details-disclosure > details {
   border-radius: 0 0 12px 0;
   display: inline-block;
   font-size: 10px;
-  font-family: 'PP Supply Mono';
+  font-family: var(--font-body);
   text-transform: uppercase;
   line-height: 1;
   padding: 1rem 1.3rem 0.6rem 1.3rem;

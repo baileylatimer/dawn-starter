@@ -2,8 +2,14 @@
 ============== */
 :root {
   --color-bg: #EDEAE4;
-  --color-contrast-higher: #000
+  --color-contrast-higher: #000;
+  --font-body: 'Neue Montreal';
+  --font-header: 'Neue Montreal';
+  --font-button: 'Neue Montreal';
 }
+
+
+
 .color-bg {
   color: var(--color-bg) !important;
 }
@@ -27,7 +33,7 @@ html, body {
 /* TYPOGRAPHY
 ============== */
 h1, h1 span, h2, h3, h4, h5, h6, .btn, p {
-  font-family: 'Neue Montreal', serif !important;
+  font-family: 'Neue Montreal', sans-serif !important;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,7 +86,7 @@ p {
   }
 
 .text-secondary {
-  font-family: 'PP Pangaia' !important;
+  font-family: 'Neue Montreal' !important;
   text-transform: none;
 }
 
@@ -97,15 +103,15 @@ p {
 
 .btn  {
   border-radius: 12px;
-  background-color: var(--color-bg);
+  background-color: var(--color-contrast-higher);
   padding: 10px 40px;
   position: relative;
   display: inline-block;
   padding: 1.5em 3em;
-  color: #000;
+  color: var(--color-bg);
   text-align: center;
   text-decoration: none;
-  font-family: 'PP Supply Mono', serif !important;
+  font-family: var(--font-button);
   font-size: 14px;
   /*Adjustfontsizeasneeded*/border: none;
   -webkit-font-smoothing: antialiased;
@@ -147,7 +153,7 @@ p {
 }
 
 a, .mono {
-  font-family: 'PP Supply Mono', serif !important; 
+  font-family: var(--font-body); 
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -335,7 +341,7 @@ select::after:active {
 
 .product-option, .totals__total-value, .tax-note, .totals, .totals__total  {
   color: var(--color-bg);
-  font-family: 'PP Supply Mono' !important;
+  font-family: var(--font-body);
 }
 
 .cart-item__image {

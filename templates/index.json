@@ -3,7 +3,6 @@
     "hero_section_EkGrDE": {
       "type": "hero-section",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/20240907-486A2616.jpg",
         "badge_text": "",
         "heading_part1": "Ele<i>v<\/i>ate to",
         "heading_part2": "Empower",
@@ -13,28 +12,52 @@
         "overlay_toggle": false
       }
     },
+    "featured_collection_EMB3Dd": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "The Hats",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "feature_text_KMU4tX": {
       "type": "feature-text",
       "settings": {
         "feature_heading": "We craft <i> Luxurious<\/i>, custom suits that      <i>command <\/i> respect",
+        "indent": false,
+        "right_text": false,
         "justify_text": false,
         "small_text": true
       }
     },
     "image_grid_CxMKhM": {
       "type": "image-grid",
-      "settings": {
-        "image_1": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-5.jpg",
-        "image_2": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-167.jpg",
-        "image_3": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-127.jpg",
-        "image_4": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-105.jpg",
-        "image_5": "shopify:\/\/shop_images\/2nd_Draft_Mobile-8.jpg"
-      }
+      "settings": {}
     },
     "mission_section_HHiGw8": {
       "type": "mission-section",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-101.jpg",
         "title": "<i>W<\/i>hat <i>w<\/i>e <i>do<\/i>",
         "heading": "By fusing Italian heritage with a modern touch, we design custom suits that captivate your colleagues, ignite desire, and leave everyone asking about you.",
         "button_url": "shopify:\/\/pages\/our-story",
@@ -44,7 +67,6 @@
     "hero_section_bRLzWq": {
       "type": "hero-section",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/20240907-486A3933.jpg",
         "badge_text": "",
         "heading_part1": "<i>How it <i> works<\/i><\/i>",
         "heading_part2": "",
@@ -59,51 +81,35 @@
       "blocks": {
         "logo_3P7Gqr": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_662.png"
-          }
+          "settings": {}
         },
         "logo_XQJ9GX": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_661.png"
-          }
+          "settings": {}
         },
         "logo_3deELp": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_660.png"
-          }
+          "settings": {}
         },
         "logo_cgbeKJ": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_659.png"
-          }
+          "settings": {}
         },
         "logo_wCf7jG": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_658.png"
-          }
+          "settings": {}
         },
         "logo_kwYP8P": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_657.png"
-          }
+          "settings": {}
         },
         "logo_WHLBnP": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_656.png"
-          }
+          "settings": {}
         },
         "logo_qeqF3t": {
           "type": "logo",
-          "settings": {
-            "logo_image": "shopify:\/\/shop_images\/Frame_666.png"
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -127,7 +133,6 @@
         "text": "",
         "button_label": "View Collection",
         "button_url": "shopify:\/\/pages\/shop",
-        "image": "shopify:\/\/shop_images\/Dylan_Blake_Sep_Gallery_Mobile-Web-121.jpg",
         "column_order": "text_first"
       }
     },
@@ -161,8 +166,7 @@
         "testimonial_yUhrLg",
         "testimonial_ENmNBq"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "feature_image_YEk3aN": {
       "type": "feature-image",
@@ -172,14 +176,12 @@
         "text": "Join a community that elevates and empowers you. The Echelon by Dylan Blake was created with you in mind. Connect with like-minded individuals in a brotherhood that values excellence",
         "button_label": "Learn more",
         "button_url": "shopify:\/\/pages\/community",
-        "image": "shopify:\/\/shop_images\/Frame_51-4.jpg",
         "column_order": "image_first"
       }
     },
     "hero_section_Rppkpz": {
       "type": "hero-section",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/20240907-486A2135.jpg",
         "badge_text": "",
         "heading_part1": "The <i>Echelon <\/i>",
         "heading_part2": "",
@@ -188,10 +190,49 @@
         "paragraph": "Join a community that elevates and empowers you. The Echelon by Dylan Blake was created with you in mind. Connect with like-minded individuals in a brotherhood that values excellence.",
         "overlay_toggle": true
       }
+    },
+    "social_gallery_nVq3xe": {
+      "type": "social-gallery",
+      "blocks": {
+        "post_h74qG9": {
+          "type": "post",
+          "settings": {
+            "quote": "STATELY'S BEEN A GAME-CHANGER. FOUR BOXES IN, NOT A SINGLE MISS. I LOOK AND FEEL GREAT - THANKS NATALIE!",
+            "instagram_handle": "",
+            "size": "medium"
+          }
+        },
+        "post_BKqqca": {
+          "type": "post",
+          "settings": {
+            "quote": "STATELY'S BEEN A GAME-CHANGER. FOUR BOXES IN, NOT A SINGLE MISS. I LOOK AND FEEL GREAT - THANKS NATALIE!",
+            "instagram_handle": "",
+            "size": "medium"
+          }
+        },
+        "post_3q4Nei": {
+          "type": "post",
+          "settings": {
+            "quote": "STATELY'S BEEN A GAME-CHANGER. FOUR BOXES IN, NOT A SINGLE MISS. I LOOK AND FEEL GREAT - THANKS NATALIE!",
+            "instagram_handle": "",
+            "size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "post_h74qG9",
+        "post_BKqqca",
+        "post_3q4Nei"
+      ],
+      "name": "Social Gallery",
+      "settings": {
+        "title": "TRUSTED BY OVER 100,000 MEN"
+      }
     }
   },
   "order": [
     "hero_section_EkGrDE",
+    "featured_collection_EMB3Dd",
     "feature_text_KMU4tX",
     "image_grid_CxMKhM",
     "mission_section_HHiGw8",
@@ -200,6 +241,7 @@
     "feature_image_tcFh6b",
     "testimonial_slider_mFXdga",
     "feature_image_YEk3aN",
-    "hero_section_Rppkpz"
+    "hero_section_Rppkpz",
+    "social_gallery_nVq3xe"
   ]
 }
