@@ -17,12 +17,30 @@
 /* =============================================
  * 1. CSS VARIABLES & ROOT SETTINGS
  * ============================================= */
+/* Font face declarations moved from theme.liquid for better specificity */
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../assets/NeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../assets/NeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500; /* Changed from 700 to 500 since this is Medium, not Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-bg: #EDEAE4;
+  --color-contrast-high: #171717;
   --color-contrast-higher: #000;
-  --font-body: 'Neue Montreal';
-  --font-header: 'Neue Montreal';
-  --font-button: 'Neue Montreal';
+  --font-body: 'Neue Montreal', serif;
+  --font-header: 'Neue Montreal', serif;
+  --font-button: 'Neue Montreal', serif;
   
   /* Border radius values */
   --border-radius-sm: 8px;
@@ -64,12 +82,20 @@ body {
  * 3. TYPOGRAPHY SYSTEM
  * ============================================= */
 /* Common text styles */
-h1, h1 span, h2, h3, h4, h5, h6, .btn, p {
-  font-family: 'Neue Montreal', sans-serif !important;
+h1, h1 span, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+a, p {
+  font-family: var(--font-body);
+}
+a {
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 /* Heading styles */
@@ -120,11 +146,7 @@ p {
   text-align: center;
 }
 
-a, .mono {
-  font-family: var(--font-body); 
-  text-transform: uppercase;
-  font-size: 14px;
-}
+
 
 .text-indent {
   text-indent: 2em;
@@ -227,7 +249,7 @@ a, .mono {
   text-align: center;
   text-decoration: none;
   font-family: var(--font-button);
-  font-size: 14px;
+  font-size: 15px;
   border: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -235,8 +257,8 @@ a, .mono {
 }
 
 .btn:hover {
-  background-color: var(--color-contrast-higher);
-  color: var(--color-bg) !important;
+  background-color: var(--color-contrast-high);
+  cursor: pointer;
 }
 
 .btn:hover::before {
@@ -245,22 +267,15 @@ a, .mono {
 
 /* Inverted button style */
 .btn--invert {
-  background-color: var(--color-contrast-higher);
-  color: var(--color-bg);
+  background-color: var(--color-bg);
+  color: var(--color-contrast-higher);
 }
 
-.btn--invert::before {
-  border-color: var(--color-bg) !important;
-}
 
 .btn--invert:hover {
-  background-color: var(--color-bg) !important;
-  color: var(--color-contrast-higher) !important;
+  background-color: var(--color-contrast-lower) !important;
 }
 
-.btn--invert:hover::before {
-  border-color: var(--color-contrast-higher) !important;
-}
 
 /* Form elements */
 .field__input, 

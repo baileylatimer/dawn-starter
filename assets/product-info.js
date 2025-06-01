@@ -192,6 +192,9 @@ if (!customElements.get('product-info')) {
           updateSourceFromDestination('Volume');
           updateSourceFromDestination('Price-Per-Item', ({ classList }) => classList.contains('hidden'));
 
+          // Update the button text with price
+          this.updateAddToCartButtonPrice(variant);
+
           this.updateQuantityRules(this.sectionId, html);
           this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');
           this.querySelector(`#Volume-Note-${this.dataset.section}`)?.classList.remove('hidden');
@@ -209,6 +212,31 @@ if (!customElements.get('product-info')) {
             },
           });
         };
+      }
+
+      // Method to update the Add to Cart button price
+      updateAddToCartButtonPrice(variant) {
+        if (!variant || !variant.available) return;
+        
+        const submitButton = this.querySelector('.product-form__submit');
+        if (!submitButton) return;
+        
+        const buttonTextSpan = submitButton.querySelector('span');
+        const variantPriceDataElement = submitButton.querySelector('.variant-price-data');
+        
+        if (buttonTextSpan && variant.price) {
+          // Format the price without decimals using the same approach as the template
+          const price = (variant.price/100).toString();
+          const formattedPrice = '$' + price.replace(/\.00$/, '');
+          
+          // Update the button text with the variant price
+          buttonTextSpan.textContent = `${window.variantStrings.addToCart} - ${formattedPrice}`;
+          
+          // Update the hidden data price element
+          if (variantPriceDataElement) {
+            variantPriceDataElement.dataset.price = variant.price/100;
+          }
+        }
       }
 
       updateVariantInputs(variantId) {

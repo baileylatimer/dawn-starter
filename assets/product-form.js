@@ -8,11 +8,23 @@ if (!customElements.get('product-form')) {
         this.form = this.querySelector('form');
         this.variantIdInput.disabled = false;
         this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
+        
+        // DEBUG: Check if cart elements exist
+        console.log('Cart Notification Element:', document.querySelector('cart-notification'));
+        console.log('Cart Drawer Element:', document.querySelector('cart-drawer'));
+        
         this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+        console.log('Selected Cart Element:', this.cart);
+        
         this.submitButton = this.querySelector('[type="submit"]');
         this.submitButtonText = this.submitButton.querySelector('span');
 
-        if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
+        if (document.querySelector('cart-drawer')) {
+          this.submitButton.setAttribute('aria-haspopup', 'dialog');
+          console.log('Added aria-haspopup to submit button');
+        } else {
+          console.log('No cart-drawer found for aria-haspopup attribute');
+        }
 
         this.hideErrors = this.dataset.hideErrors === 'true';
       }
@@ -33,18 +45,25 @@ if (!customElements.get('product-form')) {
 
         const formData = new FormData(this.form);
         if (this.cart) {
-          formData.append(
-            'sections',
-            this.cart.getSectionsToRender().map((section) => section.id)
-          );
-          formData.append('sections_url', window.location.pathname);
-          this.cart.setActiveElement(document.activeElement);
+          try {
+            const sections = this.cart.getSectionsToRender().map((section) => section.id);
+            formData.append('sections', sections.join(','));
+            formData.append('sections_url', window.location.pathname);
+            this.cart.setActiveElement(document.activeElement);
+          } catch (error) {
+            console.error('Error preparing cart sections:', error);
+          }
         }
         config.body = formData;
 
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
+            // DEBUG: Log the response structure to check for expected properties
+            console.log('Cart Add Response:', response);
+            console.log('Response has sections:', !!response.sections);
+            console.log('Response has items:', !!response.items);
+            
             if (response.status) {
               publish(PUB_SUB_EVENTS.cartError, {
                 source: 'product-form',
@@ -62,6 +81,7 @@ if (!customElements.get('product-form')) {
               this.error = true;
               return;
             } else if (!this.cart) {
+              console.log('No cart found, redirecting to cart page');
               window.location = window.routes.cart_url;
               return;
             }
@@ -79,14 +99,39 @@ if (!customElements.get('product-form')) {
                 'modalClosed',
                 () => {
                   setTimeout(() => {
-                    this.cart.renderContents(response);
+                    // Ensure the response is properly structured before rendering
+                    if (response && (response.sections || response.items)) {
+                      console.log('Rendering cart contents from quick-add-modal');
+                      this.cart.renderContents(response);
+                    } else {
+                      console.warn('Invalid cart response format. Redirecting to cart page.');
+                      window.location.href = window.routes.cart_url;
+                    }
                   });
                 },
                 { once: true }
               );
               quickAddModal.hide(true);
             } else {
-              this.cart.renderContents(response);
+              console.log('About to render cart contents directly');
+              
+              // Even if the response structure isn't what we expect, try to render anyway
+              // and manually trigger the cart drawer to open
+              try {
+                this.cart.renderContents(response);
+              } catch (error) {
+                console.error('Error rendering cart contents:', error);
+                
+                // As a fallback, just open the cart drawer without updating contents
+                // This at least keeps the user on the product page with the drawer open
+                if (this.cart && typeof this.cart.open === 'function') {
+                  console.log('Fallback: Manually opening cart drawer');
+                  this.cart.open();
+                } else {
+                  console.warn('Cannot open cart drawer, redirecting to cart page');
+                  window.location.href = window.routes.cart_url;
+                }
+              }
             }
           })
           .catch((e) => {
