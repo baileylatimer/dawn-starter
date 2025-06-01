@@ -95,8 +95,12 @@ class CartDrawer extends HTMLElement {
       }
       
       // Check if sections exists in parsedState before trying to render
-      if (parsedState && parsedState.sections) {
-        console.log('Cart drawer sections found:', Object.keys(parsedState.sections));
+      // Sections might be directly in parsedState or nested under parsedState.sections
+      const sections = parsedState?.sections || parsedState;
+      const hasSections = sections && (sections['cart-drawer'] || sections['cart-icon-bubble']);
+      
+      if (hasSections) {
+        console.log('Cart drawer sections found:', Object.keys(sections));
         
         const sectionsToRender = this.getSectionsToRender();
         console.log('Sections to render:', sectionsToRender);
@@ -109,9 +113,10 @@ class CartDrawer extends HTMLElement {
             
             console.log(`Looking for section element with ${section.selector ? 'selector' : 'id'}: ${section.selector || section.id}`, { found: !!sectionElement });
             
-            if (sectionElement && parsedState.sections[section.id]) {
-              console.log(`Updating section ${section.id}`);
-              sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+            const sectionKey = section.section || section.id;
+            if (sectionElement && sections[sectionKey]) {
+              console.log(`Updating section ${section.id} with key ${sectionKey}`);
+              sectionElement.innerHTML = this.getSectionInnerHTML(sections[sectionKey], section.selector);
             } else {
               console.warn(`Could not update section ${section.id} - Element or section data not found`);
             }
@@ -121,8 +126,49 @@ class CartDrawer extends HTMLElement {
           }
         });
       } else {
-        console.warn('Cart sections not found in the response');
-        // We'll just open the drawer without updating contents
+        console.warn('Cart sections not found in the response', { parsedState });
+        
+        // If we have a product that was just added but no sections data,
+        // fetch the cart sections directly as a fallback
+        if (parsedState && (parsedState.id || parsedState.items)) {
+          console.log('Product was added to cart, fetching updated cart sections...');
+          
+          // Construct sections parameter with the same sections we want to render
+          const sectionsToRender = this.getSectionsToRender();
+          const sectionsParam = sectionsToRender.map(section => section.section || section.id).join(',');
+          
+          // Fetch each section individually using section_id parameter
+          const sectionPromises = sectionsToRender.map(section => {
+            const sectionId = section.section || section.id;
+            return fetch(`/?section_id=${sectionId}`)
+              .then(res => res.text())
+              .then(html => ({ id: sectionId, html, section }));
+          });
+          
+          Promise.all(sectionPromises)
+            .then(sections => {
+              console.log('Fetched sections in fallback:', sections.map(s => s.id));
+              
+              // Update each section
+              sections.forEach(({ id, html, section }) => {
+                try {
+                  const sectionElement = section.selector
+                    ? document.querySelector(section.selector)
+                    : document.getElementById(section.id);
+                  
+                  if (sectionElement && html) {
+                    console.log(`Updating section ${section.id} from fallback response`);
+                    sectionElement.innerHTML = this.getSectionInnerHTML(html, section.selector);
+                  }
+                } catch (error) {
+                  console.error(`Error updating section from fallback:`, error);
+                }
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching cart sections:', error);
+            });
+        }
       }
     } catch (error) {
       console.error('Error in renderContents:', error);
@@ -158,13 +204,16 @@ class CartDrawer extends HTMLElement {
   }
 
   getSectionsToRender() {
+    console.log('CartDrawer.getSectionsToRender() called');
     return [
       {
         id: 'cart-drawer',
+        section: 'cart-drawer', // Added section property to match CartDrawerItems
         selector: '#CartDrawer',
       },
       {
         id: 'cart-icon-bubble',
+        section: 'cart-icon-bubble', // Added section property to match CartDrawerItems
       },
     ];
   }
@@ -196,37 +245,17 @@ class CartDrawerItems extends CartItems {
     ];
   }
 
-  // Override updateQuantity to make it more robust
-  updateQuantity(line, quantity, name, variantId) {
-    console.log('CartDrawerItems.updateQuantity() called', { line, quantity, name, variantId });
-    this.enableLoading(line);
-
-    const body = JSON.stringify({
-      line,
-      quantity,
-      sections: this.getSectionsToRender().map((section) => section.section).join(','),
-      sections_url: window.location.pathname,
-    });
-
-    fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
-      .then((response) => {
-        return response.text();
-      })
-      .then((state) => {
-        const parsedState = JSON.parse(state);
-        console.log('Cart change response:', parsedState);
-        // Continue with the rest of the method as in the parent class
-        super.updateQuantity(line, quantity, name, variantId);
-      })
-      .catch((e) => {
-        console.error('Error updating cart:', e);
-        this.querySelectorAll('.loading__spinner').forEach((overlay) => overlay.classList.add('hidden'));
-        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        if (errors) errors.textContent = window.cartStrings.error;
-      })
-      .finally(() => {
-        this.disableLoading(line);
-      });
+  // Don't override updateQuantity - use the parent class implementation
+  // The parent class already handles fetching sections properly
+  
+  updateCartDrawerHeader(parsedState) {
+    // Update cart count in header if needed
+    if (parsedState.item_count !== undefined) {
+      const cartCountBubble = document.querySelector('.cart-count-bubble');
+      if (cartCountBubble) {
+        cartCountBubble.textContent = parsedState.item_count;
+      }
+    }
   }
 }
 

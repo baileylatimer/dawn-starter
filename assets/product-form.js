@@ -45,14 +45,7 @@ if (!customElements.get('product-form')) {
 
         const formData = new FormData(this.form);
         if (this.cart) {
-          try {
-            const sections = this.cart.getSectionsToRender().map((section) => section.id);
-            formData.append('sections', sections.join(','));
-            formData.append('sections_url', window.location.pathname);
-            this.cart.setActiveElement(document.activeElement);
-          } catch (error) {
-            console.error('Error preparing cart sections:', error);
-          }
+          this.cart.setActiveElement(document.activeElement);
         }
         config.body = formData;
 
@@ -113,25 +106,46 @@ if (!customElements.get('product-form')) {
               );
               quickAddModal.hide(true);
             } else {
-              console.log('About to render cart contents directly');
+              console.log('About to fetch cart sections and render');
               
-              // Even if the response structure isn't what we expect, try to render anyway
-              // and manually trigger the cart drawer to open
-              try {
-                this.cart.renderContents(response);
-              } catch (error) {
-                console.error('Error rendering cart contents:', error);
-                
-                // As a fallback, just open the cart drawer without updating contents
-                // This at least keeps the user on the product page with the drawer open
-                if (this.cart && typeof this.cart.open === 'function') {
-                  console.log('Fallback: Manually opening cart drawer');
-                  this.cart.open();
-                } else {
-                  console.warn('Cannot open cart drawer, redirecting to cart page');
-                  window.location.href = window.routes.cart_url;
-                }
-              }
+              // After adding to cart, we need to fetch the sections separately
+              // because /cart/add.js doesn't return sections
+              const sectionsToRender = this.cart.getSectionsToRender();
+              
+              // Fetch each section individually
+              const sectionPromises = sectionsToRender.map(section => {
+                const sectionId = section.section || section.id;
+                return fetch(`/?section_id=${sectionId}`)
+                  .then(res => res.text())
+                  .then(html => ({ id: sectionId, html }));
+              });
+              
+              Promise.all(sectionPromises)
+                .then(sections => {
+                  console.log('Fetched sections:', sections.map(s => s.id));
+                  
+                  // Convert to sections object format
+                  const sectionsObj = {};
+                  sections.forEach(({ id, html }) => {
+                    sectionsObj[id] = html;
+                  });
+                  
+                  // Combine the cart data with sections
+                  const combinedResponse = {
+                    ...response,
+                    sections: sectionsObj
+                  };
+                  
+                  // Now render with sections
+                  this.cart.renderContents(combinedResponse);
+                })
+                .catch(error => {
+                  console.error('Error fetching sections:', error);
+                  // Fallback: just open the drawer with existing content
+                  if (this.cart && typeof this.cart.open === 'function') {
+                    this.cart.open();
+                  }
+                });
             }
           })
           .catch((e) => {
