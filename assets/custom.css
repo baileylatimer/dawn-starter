@@ -1,28 +1,46 @@
-/* COLORS
-============== */
+/* =============================================
+ * CUSTOM THEME STYLES - DAWN STARTER
+ * =============================================
+ * Table of Contents:
+ * 1. CSS Variables & Root Settings
+ * 2. Base/Reset Styles
+ * 3. Typography System
+ * 4. Layout Utilities
+ * 5. Components (Buttons, Forms, etc.)
+ * 6. Effects & Animations
+ * 7. Header & Navigation
+ * 8. Cart & Drawer
+ * 9. Product Components
+ * 10. Visibility & Helper Utilities
+ * ============================================= */
+
+/* =============================================
+ * 1. CSS VARIABLES & ROOT SETTINGS
+ * ============================================= */
 :root {
   --color-bg: #EDEAE4;
   --color-contrast-higher: #000;
   --font-body: 'Neue Montreal';
   --font-header: 'Neue Montreal';
   --font-button: 'Neue Montreal';
+  
+  /* Border radius values */
+  --border-radius-sm: 8px;
+  --border-radius: 16px; 
+  --border-radius-lg: 20px;
+  
+  /* Spacing constants */
+  --spacing-lg: 40px;
+  --spacing-md: 20px;
+  --spacing-sm: 12px;
 }
 
-
-
+/* Color utility classes */
 .color-bg {
   color: var(--color-bg) !important;
 }
 
-div h1 span {
-  line-height: 100% !important;
-}
-
 .bg {
-  background-color: var(--color-bg) !important;
-}
-
-html, body {
   background-color: var(--color-bg) !important;
 }
 
@@ -30,8 +48,22 @@ html, body {
   background-color: var(--color-bg) !important;
 }
 
-/* TYPOGRAPHY
-============== */
+/* =============================================
+ * 2. BASE/RESET STYLES
+ * ============================================= */
+html, 
+body {
+  background-color: var(--color-bg) !important;
+}
+
+.gradient {
+  background-color: transparent !important;
+}
+
+/* =============================================
+ * 3. TYPOGRAPHY SYSTEM
+ * ============================================= */
+/* Common text styles */
 h1, h1 span, h2, h3, h4, h5, h6, .btn, p {
   font-family: 'Neue Montreal', sans-serif !important;
   text-transform: uppercase;
@@ -40,25 +72,10 @@ h1, h1 span, h2, h3, h4, h5, h6, .btn, p {
   text-rendering: optimizeLegibility;
 }
 
+/* Heading styles */
 h1, .h1 {
   font-size: 81px;
   line-height: 95%;
-}
-
-h3 {
-  text-transform: none !important;
-  font-size: 27px !important;
-}
-@media (max-width: 1024px) {
-  h3 {
-    font-size: 20px !important;
-  }
-}
-
-
-h1 .text-secondary {
-  font-style: italic;
-  text-transform: uppercase;
 }
 
 h2, .h2 {
@@ -66,25 +83,27 @@ h2, .h2 {
   line-height: 95%;
 }
 
+h3 {
+  text-transform: none !important;
+  font-size: 27px !important;
+}
+
+div h1 span {
+  line-height: 100% !important;
+}
+
+h1 .text-secondary {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* Paragraph styles */
 p {
   font-size: 20px;
   text-transform: none;
 }
 
-@media screen and (max-width: 990px) {
-  h1, .h1 {
-    font-size: 50px;
-  }
-  h2, .h2 {
-    font-size: 26px;
-    line-height: 95%;
-  }
-  p {
-    font-size: 16px;
-    text-transform: none;
-  }
-  }
-
+/* Font variants */
 .text-secondary {
   font-family: 'Neue Montreal' !important;
   text-transform: none;
@@ -101,7 +120,104 @@ p {
   text-align: center;
 }
 
-.btn  {
+a, .mono {
+  font-family: var(--font-body); 
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.text-indent {
+  text-indent: 2em;
+  position: relative;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 990px) {
+  h1, .h1 {
+    font-size: 50px;
+  }
+  
+  h2, .h2 {
+    font-size: 26px;
+    line-height: 95%;
+  }
+  
+  p {
+    font-size: 16px;
+    text-transform: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  h3 {
+    font-size: 20px !important;
+  }
+}
+
+@media(max-width:1023px) {
+  .text-indent {
+    text-indent: 2em;
+    position: relative;
+  }
+}
+
+/* =============================================
+ * 4. LAYOUT UTILITIES
+ * ============================================= */
+/* Margin utilities */
+.mx-d {
+  margin-left: var(--spacing-lg);
+  margin-right: var(--spacing-lg);
+}
+
+/* Padding utilities */
+.px-d {
+  padding-left: var(--spacing-lg) !important;
+  padding-right: var(--spacing-lg) !important;
+}
+
+.py-d {
+  padding-top: var(--spacing-lg) !important;
+  padding-bottom: var(--spacing-lg) !important;
+}
+
+/* Border radius utility */
+.br {
+  border-radius: var(--border-radius-lg) !important;
+  -webkit-border-radius: var(--border-radius-lg) !important;
+  -moz-border-radius: var(--border-radius-lg) !important;
+  -ms-border-radius: var(--border-radius-lg) !important;
+  -o-border-radius: var(--border-radius-lg) !important;
+  overflow: hidden;
+}
+
+.tw-grid {
+  display: grid;
+}
+
+/* Responsive layout adjustments */
+@media(max-width:1023px) {
+  .mx-d {
+    margin-left: var(--spacing-md);
+    margin-right: var(--spacing-md);
+  }
+  
+  .px-d {
+    padding-left: var(--spacing-sm) !important;
+    padding-right: var(--spacing-sm) !important;
+  }
+  
+  .py-d {
+    padding-top: var(--spacing-md) !important;
+    padding-bottom: var(--spacing-md) !important;
+  }
+}
+
+/* =============================================
+ * 5. COMPONENTS (BUTTONS, FORMS, ETC.)
+ * ============================================= */
+/* Button styles */
+.btn {
   background-color: var(--color-contrast-higher);
   padding: 10px 40px;
   position: relative;
@@ -112,99 +228,90 @@ p {
   text-decoration: none;
   font-family: var(--font-button);
   font-size: 14px;
-  /*Adjustfontsizeasneeded*/border: none;
+  border: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
 }
 
-
-.btn:hover  {
+.btn:hover {
   background-color: var(--color-contrast-higher);
   color: var(--color-bg) !important;
 }
 
 .btn:hover::before {
-  border-color: var(--color-bg); /* Adjust border color as needed */
+  border-color: var(--color-bg);
 }
 
-
-.btn--invert  {
+/* Inverted button style */
+.btn--invert {
   background-color: var(--color-contrast-higher);
   color: var(--color-bg);
 }
 
 .btn--invert::before {
-  border-color: var(--color-bg) !important; /* Adjust border color as needed */
+  border-color: var(--color-bg) !important;
 }
 
-.btn--invert:hover  {
+.btn--invert:hover {
   background-color: var(--color-bg) !important;
   color: var(--color-contrast-higher) !important;
 }
 
 .btn--invert:hover::before {
-  border-color: var(--color-contrast-higher) !important; /* Adjust border color as needed */
+  border-color: var(--color-contrast-higher) !important;
 }
 
-a, .mono {
-  font-family: var(--font-body); 
-  text-transform: uppercase;
-  font-size: 14px;
+/* Form elements */
+.field__input, 
+.select__select, 
+.customer .field input, 
+.customer select {
+  border-radius: var(--border-radius);
 }
 
-/* SPACING
-============= */
-
-.mx-d {
-  margin-left: 40px;
-  margin-right: 40px;
-}
-@media(max-width:1023px) {
-  .mx-d {
-    margin-left: 20px;
-    margin-right: 20px;
-  } 
+.field__input {
+  background-color: var(--color-bg) !important;
 }
 
-.px-d {
-  padding-left: 40px !important;
-  padding-right: 40px !important;
-}
-@media(max-width:1023px) {
-  .px-d {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  } 
+.field::after, 
+.select::after, 
+.customer .field::after, 
+.customer select::after, 
+.localization-form__select::after {
+  box-shadow: none;
 }
 
-.py-d {
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
-}
-@media(max-width:1023px) {
-  .py-d {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-  } 
+select::after:active {
+  box-shadow: none;
 }
 
-.br {
-  border-radius: 20px !important;
-  -webkit-border-radius: 20px !important;
-  -moz-border-radius: 20px !important;
-  -ms-border-radius: 20px !important;
-  -o-border-radius: 20px !important;
-  overflow: hidden;
+.field:hover.field::after, 
+.select:hover.select::after, 
+.select__select:hover.select__select::after, 
+.customer .field:hover.field::after, 
+.customer select:hover.select::after, 
+.localization-form__select:hover.localization-form__select::after {
+  box-shadow: none;
 }
 
+.field__input:focus, 
+.select__select:focus, 
+.customer .field input:focus, 
+.customer select:focus, 
+.localization-form__select:focus.localization-form__select::after {
+  box-shadow: none;
+  border-radius: var(--border-radius);
+}
 
-/* FX */
-
+/* =============================================
+ * 6. EFFECTS & ANIMATIONS
+ * ============================================= */
+/* Stitch effect */
 .stitch {
   position: relative;
 }
+
 .stitch::before {
   content: "";
   position: absolute;
@@ -213,8 +320,8 @@ a, .mono {
   right: 0;
   bottom: 0;
   margin: 1em;
-  /*Adjustmargintocontrolinseteffect*/border: 1px dashed var(--color-bg);
-  /*Adjustbordercolorasneeded*/box-sizing: border-box;
+  border: 1px dashed var(--color-bg);
+  box-sizing: border-box;
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
@@ -222,31 +329,78 @@ a, .mono {
   -o-border-radius: 12px;
 }
 
-
-/* VISIBILITY */
-.mobile-hide {
-  display: none;
+/* =============================================
+ * 7. HEADER & NAVIGATION
+ * ============================================= */
+.icon-cart {
+  transform: scale(0.65);
+  -webkit-transform: scale(0.65);
+  -moz-transform: scale(0.65);
+  -ms-transform: scale(0.65);
+  -o-transform: scale(0.65);
 }
 
-@media(min-width:1023px) {
-  .mobile-hide {
-    display: flex;
-  }
+.header__icon:hover .icon-cart {
+  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
 }
 
-
-.gradient {
-  background-color: transparent !important;
+.header__icon--cart {
+  margin-top: 8px;
 }
 
-.field__input {
-  background-color: var(--color-bg) !important;
+.cart-count-bubble {
+  background-color: transparent;
+  color: var(--color-contrast-higher);
+  font-size: 15px;
+  bottom: 1.75rem;
+  left: 1.5rem;
+  font-weight: bold;
 }
 
-.tw-grid {
-  display: grid;
+.nav-btn {
+  transform: scale(.8);
+  -webkit-transform: scale(.8);
+  -moz-transform: scale(.8);
+  -ms-transform: scale(.8);
+  -o-transform: scale(.8);
 }
 
+.header__icon--account {
+  display: none !important;
+}
+
+/* =============================================
+ * 8. CART & DRAWER
+ * ============================================= */
+/* Cart drawer */
+.drawer__inner {
+  max-height: 100vh;
+}
+
+.product-option, 
+.totals__total-value, 
+.tax-note, 
+.totals, 
+.totals__total {
+  color: var(--color-bg);
+  font-family: var(--font-body);
+}
+
+.cart-item__image {
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+
+/* =============================================
+ * 9. PRODUCT COMPONENTS
+ * ============================================= */
 .product-media-container {
   background-size: cover;
   background-position: center;
@@ -259,100 +413,15 @@ a, .mono {
   filter: brightness(.92);
 }
 
-/* section-main-product.css | http://127.0.0.1:9292/assets/section-main-product.css?v=136932456800638270651729458994 */
-
-.field__input, .select__select, .customer .field input, .customer select {
-  border-radius: 16px;
+/* =============================================
+ * 10. VISIBILITY & HELPER UTILITIES
+ * ============================================= */
+.mobile-hide {
+  display: none;
 }
 
-.field::after, .select::after, .customer .field::after, .customer select::after, .localization-form__select::after {
-  box-shadow: none;
-}
-
-select::after:active {
-  box-shadow: none;
-}
-
-
-.field:hover.field::after, .select:hover.select::after, .select__select:hover.select__select::after, .customer .field:hover.field::after, .customer select:hover.select::after, .localization-form__select:hover.localization-form__select::after {
-  box-shadow: none;
+@media(min-width:1023px) {
+  .mobile-hide {
+    display: flex;
   }
-
-  .field__input:focus, .select__select:focus, .customer .field input:focus, .customer select:focus, .localization-form__select:focus.localization-form__select::after {
-    box-shadow: none;
-    border-radius: 16px;
-    }
-
-
-    .icon-cart {
-      transform: scale(0.65);
-      -webkit-transform: scale(0.65);
-      -moz-transform: scale(0.65);
-      -ms-transform: scale(0.65);
-      -o-transform: scale(0.65);
-}
-
-.header__icon:hover .icon-cart {
-  transform: scale(0.7);
-  -webkit-transform: scale(0.7);
-  -moz-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  -o-transform: scale(0.7);
-}
-
-.header__icon--cart {
-  margin-top: 8px
-}
-
-.cart-count-bubble {
-  background-color: transparent;
-  color: var(--color-contrast-higher);
-  font-size: 15px;
-  bottom: 1.75rem;
-  left: 1.5rem;
-  font-weight: bold;
-  }
-
-
-  .nav-btn {
-    transform: scale(.8);
-    -webkit-transform: scale(.8);
-    -moz-transform: scale(.8);
-    -ms-transform: scale(.8);
-    -o-transform: scale(.8);
-}
-
-
-/* Cart drawer */
-.drawer__inner {
-  max-height: 100vh;
-}
-
-.product-option, .totals__total-value, .tax-note, .totals, .totals__total  {
-  color: var(--color-bg);
-  font-family: var(--font-body);
-}
-
-.cart-item__image {
-  border-radius: 16px;
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  -ms-border-radius: 16px;
-  -o-border-radius: 16px;
-}
-
-.header__icon--account {
-  display: none !important;
-}
-
-
-.text-indent {
-  text-indent: 2em;
-  position: relative;
-}
-@media(max-width:1023px) {
-.text-indent {
-  text-indent: 2em;
-  position: relative;
-}
 }
