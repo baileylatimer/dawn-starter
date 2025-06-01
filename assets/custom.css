@@ -102,7 +102,6 @@ p {
 }
 
 .btn  {
-  border-radius: 12px;
   background-color: var(--color-contrast-higher);
   padding: 10px 40px;
   position: relative;
@@ -117,10 +116,7 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
+
 }
 
 
@@ -252,19 +248,12 @@ a, .mono {
 }
 
 .product-media-container {
-  background-image: url('https://cdn.shopify.com/s/files/1/0584/0961/5456/files/bg-card.jpg?v=1730870433');
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
   overflow: hidden;
 }
 
 .product-media-container img {
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
   position: relative;
   z-index: 1;
   filter: brightness(.92);
